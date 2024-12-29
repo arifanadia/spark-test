@@ -10,49 +10,49 @@ body {
 
 @layer utilities {
   .bg-hero {
-    background-image: url("./horizontal/hero1.png");
+    background-image: url("/horizontal/hero1.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-hero2 {
-    background-image: url("./horizontal/hero2.png");
+    background-image: url("/horizontal/hero2.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-hero3 {
-    background-image: url("./horizontal/hero3.png");
+    background-image: url("/horizontal/hero3.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-hero4 {
-    background-image: url("./horizontal/hero4.png");
+    background-image: url("/horizontal/hero4.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-hero5 {
-    background-image: url("./horizontal/hero5.png");
+    background-image: url("/horizontal/hero5.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-hero6 {
-    background-image: url("./horizontal/hero6.png");
+    background-image: url("/horizontal/hero6.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-hero7 {
-    background-image: url("./horizontal/hero7.png");
+    background-image: url("/horizontal/hero7.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
   }
   .bg-heroform {
-    background-image: url("./horizontal/form.png");
+    background-image: url("/horizontal/form.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
