@@ -3,7 +3,7 @@ import React from "react";
 const HeroSecond = () => {
   return (
     <div className="bg-hero2 p-12  ">
-      <img src="./logo.png" alt="logo" />
+      <img src="/logo.png" alt="logo" />
       <div className="flex items-end xl:pt-44">
         <div className="space-y-2">
           <h1 className="h1-tilt">

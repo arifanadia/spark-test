@@ -6,7 +6,7 @@ const HeroFive = () => {
     <div className="bg-hero5 p-12">
       <nav className="flex items-center justify-between">
         <div className="justify-start">
-          <img src="./logo.png" alt="logo" />
+          <img src="/logo.png" alt="logo" />
         </div>
         <ul className="flex gap-20 items-center  text-white font-tiltWarp">
           <li>Diensten</li>

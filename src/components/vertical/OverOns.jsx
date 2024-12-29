@@ -31,17 +31,17 @@ const OverOns = () => {
           </p>
           <div className="flex items-center justify-center gap-4 lg:gap-8 mt-12">
             <img
-              src="./horizontal/warranty.png"
+              src="/horizontal/warranty.png"
               alt="10 years warranty"
               className="w-32 md:w-48"
             />
             <img
-              src="./horizontal/rating.png"
+              src="/horizontal/rating.png"
               alt="rating"
               className="w-12 md:w-16"
             />
             <img
-              src="./horizontal/google.png"
+              src="/horizontal/google.png"
               alt="10 years warranty"
               className="w-28 md:w-32"
             />

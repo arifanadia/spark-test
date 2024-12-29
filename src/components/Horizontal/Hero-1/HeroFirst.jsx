@@ -94,7 +94,7 @@ const HeroFirst = () => {
   return (
     <div className="bg-hero p-6 md:p-10 w-full relative">
       <div className="fixed">
-        <img src="./logo.png" alt="logo" className="" />
+        <img src="/logo.png" alt="logo" className="" />
       </div>
       {/* Scroll animations */}
       <div
@@ -111,7 +111,7 @@ const HeroFirst = () => {
               <ProfileCard
                 name="Fermin Vargas"
                 role="Construction Manager"
-                img="./profile/profile1.png"
+                img="/profile/profile1.png"
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ const HeroFirst = () => {
               <ProfileCard
                 name="Jane Smith"
                 role="Project Engineer"
-                img="./profile/profile1.png"
+                img="/profile/profile1.png"
               />
             </div>
           </div>
@@ -137,7 +137,7 @@ const HeroFirst = () => {
               <ProfileCard
                 name="Alice Johnson"
                 role="Lead Architect"
-                img="./profile/profile1.png"
+                img="/profile/profile1.png"
               />
             </div>
           </div>
@@ -150,7 +150,7 @@ const HeroFirst = () => {
               <ProfileCard
                 name="Michael Brown"
                 role="Site Supervisor"
-                img="./profile/profile1.png"
+                img="/profile/profile1.png"
               />
             </div>
           </div>
@@ -163,7 +163,7 @@ const HeroFirst = () => {
               <ProfileCard
                 name="Sophia Davis"
                 role="Structural Engineer"
-                img="./profile/profile1.png"
+                img="/profile/profile1.png"
               />
             </div>
           </div>
@@ -176,32 +176,33 @@ const HeroFirst = () => {
               <ProfileCard
                 name="Emily Martinez"
                 role="Interior Designer"
-                img="./profile/profile1.png"
+                img="/profile/profile1.png"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-end pt-80 lg:pt-[550px] flex-col ">
-        <div className="flex items-center justify-center gap-4 lg:gap-8 mb-8 md:mb-0">
+      <div className="flex justify-between items-end pt-80 lg:pt-[550px] ">
+        <div className="flex items-center  lg:gap-8 mb-8 md:mb-0">
+       
           <img
-            src="./horizontal/warranty.png"
-            alt="10 years warranty"
-            className="w-32 md:w-48"
+            src="/horizontal/warranty.png"
+            alt="rating"
+            className="w-48 "
           />
           <img
-            src="./horizontal/rating.png"
+            src="/horizontal/rating.png"
             alt="rating"
             className="w-12 md:w-16"
           />
           <img
-            src="./horizontal/google.png"
+            src="/horizontal/google.png"
             alt="10 years warranty"
             className="w-28 md:w-32"
           />
         </div>
         <img
-          src="./horizontal/hand.png"
+          src="/horizontal/hand.png"
           alt="10 years warranty"
           className="w-[320px] md:w-[463px] -mr-12 hidden lg:block"
         />

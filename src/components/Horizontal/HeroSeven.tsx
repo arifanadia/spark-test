@@ -3,7 +3,7 @@ import React from "react";
 const HeroSeven = () => {
   return (
     <div className="bg-hero7 p-12 ">
-      <img src="./logo.png" alt="logo" />
+      <img src="/logo.png" alt="logo" />
       <div className="flex justify-between items-end pt-[370px]">
         <h1 className="text-6xl text-white font-tiltWarp leading-tight">
           Wij bieden een <br /> duurzame en passende <br /> oplossing voor uw

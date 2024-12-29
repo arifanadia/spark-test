@@ -5,7 +5,7 @@ const HeroForm = () => {
   return (
     <div className="flex justify-between items-center">
       <div className="bg-heroform p-12 w-2/4 ">
-        <img src="./logo.png" alt="logo" />
+        <img src="/logo.png" alt="logo" />
         <div className="my-56">
           <AddressForm />
         </div>

@@ -7,7 +7,7 @@ const HeroThird = () => {
         <span className="text-4xl uppercase text-white font-tiltWarp">
           GMK Dakonderhoud
         </span>
-        <img src="./icon.png" alt="logo" />
+        <img src="/icon.png" alt="logo" />
       </div>
       <div className="text-right flex flex-col justify-end mt-28">
         <div>

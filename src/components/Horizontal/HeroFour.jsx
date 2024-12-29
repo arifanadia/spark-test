@@ -4,7 +4,7 @@ const HeroFour = () => {
   return (
     <div className="bg-hero4 p-12 ">
       <div className="flex gap-4 items-center justify-start ">
-        <img src="./icon.png" alt="logo" />
+        <img src="/icon.png" alt="logo" />
         <span className="text-4xl uppercase text-white font-tiltWarp">
           GMK Dakonderhoud
         </span>

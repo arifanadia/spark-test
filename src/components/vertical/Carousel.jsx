@@ -48,7 +48,7 @@ const Carousel = () => {
         {[...Array(6)].map((_, index) => (
           <SwiperSlide key={index}>
             <img 
-              src={`./carousel/carousel-${index + 1}.jpg`}  
+              src={`/carousel/carousel-${index + 1}.jpg`}  
               alt={`Project ${index + 1}`} 
               className='object-cover  h-72 lg:h-[500px]' 
             />
