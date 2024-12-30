@@ -1,5 +1,6 @@
 import React from "react";
 import AddressForm from "../custom-ui/address-form";
+import { Link } from "react-router";
 
 const HeroFive = () => {
   return (
@@ -9,9 +10,16 @@ const HeroFive = () => {
           <img src="/logo.png" alt="logo" />
         </div>
         <ul className="flex gap-20 items-center  text-white font-tiltWarp">
-          <li>Diensten</li>
-          <li>Over Ons </li>
-          <li> Contact</li>
+        {/* Links for navigation */}
+        <li>
+            <a href="/diensten" className="hover:underline">Diensten</a> 
+          </li>
+          <li>
+            <a href="/over-ons" className="hover:underline">Over Ons</a> 
+          </li>
+          <li>
+            <a href="/contact" className="hover:underline">Contact</a> 
+          </li>
         </ul>
         <div className="text-white">
           <span>Spoed? Bel 020 1234567 of klik hier | Chat</span>

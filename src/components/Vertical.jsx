@@ -5,7 +5,7 @@ import Footer from "./vertical/Footer";
 
 const Vertical = () => {
   return (
-    <div>
+    <div className="">
       <OverOns />
       <div className="max-w-7xl mx-auto mt-12">
         <Carousel />

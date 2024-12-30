@@ -1,60 +1,38 @@
-
-import { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';;
+import React from "react";
 
 const Carousel = () => {
-
-  const swiperRef = useRef(null);
+  const images = [
+    "./carousel/carousel-1.jpg",
+    "./carousel/carousel-2.jpg",
+    "./carousel/carousel-3.jpg",
+    "./carousel/carousel-4.jpg",
+    "./carousel/carousel-5.jpg",
+    "./carousel/carousel-6.jpg",
+    "./carousel/carousel-1.jpg",
+    "./carousel/carousel-2.jpg",
+    "./carousel/carousel-3.jpg",
+    "./carousel/carousel-4.jpg",
+  ];
 
   return (
-    <div className="swiper-container">
-      <Swiper
-        ref={swiperRef}
-        modules={[EffectCoverflow, Navigation]}
-        effect="coverflow"
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={2} 
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        loop={true}
-        className="mySwiper"
-        breakpoints={{
-          640: {
-            slidesPerView: 1, 
-          },
- 
-          768: {
-            slidesPerView: 2, 
-          },
-          1024: {
-            slidesPerView: 3, 
-          },
-          1440: {
-            slidesPerView: 4, 
-          }
-        }}
-      >
+    <div className="flex justify-center items-center my-72">
+      <div className="box relative w-full h-full">
+  {images.map((src, index) => (
+    <span
+      key={index}
+      className={`absolute top-0 left-0 w-full h-full transform-origin-center transform-style-3d
+        transform rotate-[calc(var(--i)*36deg)] translate-z-[450px]`}
+      style={{ "--i": index + 1 }}  // You need to keep the inline style for the custom property
+    >
+      <img
+        src={src}
+        alt={`carousel-${index + 1}`}
+        className="absolute top-0 left-0 w-full h-full transition-transform duration-500 rounded-lg hover:translate-y-[-2px]"
+      />
+    </span>
+  ))}
+</div>
 
-        {[...Array(6)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <img 
-              src={`/carousel/carousel-${index + 1}.jpg`}  
-              alt={`Project ${index + 1}`} 
-              className='object-cover  h-72 lg:h-[500px]' 
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
     </div>
   );
 };

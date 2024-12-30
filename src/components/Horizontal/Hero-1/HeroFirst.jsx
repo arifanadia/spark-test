@@ -16,14 +16,15 @@ const HeroFirst = () => {
   cardFromTopRef.current = [];
 
   useEffect(() => {
+    // Get the scroll amount for horizontal scroll animation
+    const getScrollAmount = () => racesRef.current.scrollWidth - window.innerWidth;
+
     // Horizontal scrolling animation
     const races = racesRef.current;
 
     if (races) {
-      const getScrollAmount = () => -(races.scrollWidth - window.innerWidth);
-
       const tween = gsap.to(races, {
-        x: getScrollAmount,
+        x: -getScrollAmount(), // Ensure the scroll position is negative for proper scrolling
         duration: 3,
         ease: "none",
       });
@@ -31,7 +32,7 @@ const HeroFirst = () => {
       ScrollTrigger.create({
         trigger: races.parentElement,
         start: "top 0%",
-        end: () => `+=${getScrollAmount() * -1}`,
+        end: () => `+=${getScrollAmount() * -1}`, // Adjust scrollTrigger end
         pin: true,
         animation: tween,
         scrub: 1,
@@ -102,7 +103,6 @@ const HeroFirst = () => {
         ref={racesRef}
       >
         <div className="flex flex-wrap md:flex-nowrap justify-center space-x-4 md:space-x-8">
-          {/* Existing Cards */}
           <div
             className="h-2 w-20 bg-white mb-12 absolute top-1/2 left-16 md:left-32 lg:left-48"
             ref={(el) => addToRefs(el, cardFromTopRef)}
@@ -184,7 +184,6 @@ const HeroFirst = () => {
       </div>
       <div className="flex justify-between items-end pt-80 lg:pt-[550px] ">
         <div className="flex items-center  lg:gap-8 mb-8 md:mb-0">
-       
           <img
             src="/horizontal/warranty.png"
             alt="rating"

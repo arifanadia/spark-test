@@ -12,9 +12,23 @@ export default {
       },
       fontFamily: {
         tiltWarp: ["Tilt Warp", "serif"],
-        nobile: ["Nobile", "serif"]
+        nobile: ["Nobile", "serif"],
+      },
+      transformOrigin: {
+        center: 'center',
+      },
+
+      rotate: {
+        'y': 'rotateY(360deg)',
+      },
+      translate: {
+        'z-450': 'translateZ(450px)',
+      },
+      // Animation classes
+      animation: {
+        rotate: "animate 5s linear infinite",
       },
     },
   },
   plugins: [],
-}
+};

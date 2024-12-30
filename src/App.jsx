@@ -4,9 +4,11 @@ import Vertical from "./components/vertical";
 
 const App = () => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
-     <Horizontal />
-     <Vertical />
+    <div className="min-h-screen w-ful">
+      <Horizontal />
+      <div>
+        <Vertical />
+      </div>
     </div>
   );
 };
