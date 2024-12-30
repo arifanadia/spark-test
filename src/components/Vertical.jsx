@@ -5,9 +5,9 @@ import Footer from "./vertical/Footer";
 
 const Vertical = () => {
   return (
-    <div className="">
+    <div className="h-screen vertical-section ">
       <OverOns />
-      <div className="max-w-7xl mx-auto mt-12">
+      <div className="max-w-7xl mx-auto mt-12 ">
         <Carousel />
         <div className="mt-12">
           <p className=" text-lg text-gray-700">

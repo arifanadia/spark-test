@@ -6,33 +6,26 @@ import ProfileCard from "./ProfileCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroFirst = () => {
-  // Refs for animations
   const cardFromDownRef = useRef([]);
   const cardFromTopRef = useRef([]);
   const racesRef = useRef(null);
 
-  // Ensure refs are updated properly
-  cardFromDownRef.current = [];
-  cardFromTopRef.current = [];
-
   useEffect(() => {
-    // Get the scroll amount for horizontal scroll animation
-    const getScrollAmount = () => racesRef.current.scrollWidth - window.innerWidth;
-
-    // Horizontal scrolling animation
     const races = racesRef.current;
 
     if (races) {
+      const getScrollAmount = () => window.innerWidth - races.scrollWidth;
+
       const tween = gsap.to(races, {
-        x: -getScrollAmount(), // Ensure the scroll position is negative for proper scrolling
+        x: getScrollAmount(),
         duration: 3,
         ease: "none",
       });
 
       ScrollTrigger.create({
-        trigger: races.parentElement,
-        start: "top 0%",
-        end: () => `+=${getScrollAmount() * -1}`, // Adjust scrollTrigger end
+        trigger: races,
+        start: "top 50%",
+        end: () => `+=${getScrollAmount() * -1}`,
         pin: true,
         animation: tween,
         scrub: 1,
@@ -41,51 +34,34 @@ const HeroFirst = () => {
       });
     }
 
-    // Animation for cards from down
-    cardFromDownRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1 + index * 0.5, // Increase duration incrementally
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+    const animateCards = (refArray, from, to, offset) => {
+      refArray.current.forEach((card, index) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, x: from }, // Start from off-screen right
+          {
+            opacity: 1,
+            x: to, // End at normal position
+            duration: 1 + index * 0.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+    };
 
-    // Animation for cards from top
-    cardFromTopRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: -100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1 + index * 0.5, // Increase duration incrementally
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+    animateCards(cardFromDownRef, 100, 0); // Cards coming from the right
+    animateCards(cardFromTopRef, 100, 0); // Cards coming from the right
 
     return () => {
-      // Cleanup ScrollTrigger instances
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
-  // Function to add elements to the respective refs
   const addToRefs = (el, ref) => {
     if (el && !ref.current.includes(el)) {
       ref.current.push(el);
@@ -95,9 +71,8 @@ const HeroFirst = () => {
   return (
     <div className="bg-hero p-6 md:p-10 w-full relative">
       <div className="fixed">
-        <img src="/logo.png" alt="logo" className="" />
+        <img src="/logo.png" alt="logo" />
       </div>
-      {/* Scroll animations */}
       <div
         className="border-b-2 border-white/35 w-full absolute top-1/2 left-0"
         ref={racesRef}
@@ -182,13 +157,10 @@ const HeroFirst = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-end pt-80 lg:pt-[550px] ">
-        <div className="flex items-center  lg:gap-8 mb-8 md:mb-0">
-          <img
-            src="/horizontal/warranty.png"
-            alt="rating"
-            className="w-48 "
-          />
+
+      <div className="flex justify-between items-end pt-80 lg:pt-[550px]">
+        <div className="flex items-center lg:gap-8 mb-8 md:mb-0">
+          <img src="/horizontal/warranty.png" alt="rating" className="w-48" />
           <img
             src="/horizontal/rating.png"
             alt="rating"

@@ -10,6 +10,7 @@ html{
 
 body {
   font-family: "Actor", serif;
+
 }
 
 @layer utilities {
@@ -68,14 +69,11 @@ body {
     @apply text-gray-900;
   }
 
-
-
-
-
-
   .horizontal-scrolling {
     overflow-x: scroll;
-    overflow-y: hidden;
+    height: 100vh;
+  }
+  .section{
     height: 100vh;
   }
 }
@@ -149,4 +147,10 @@ body {
 img:hover{
   transform: translateY(-2px);
   
+}
+.vertical-section{
+ overflow-y: auto ;
+}
+.horizontal-section{
+  overflow-x: auto;
 }
